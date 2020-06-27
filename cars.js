@@ -88,12 +88,18 @@ function generateSingleCar(index) {
 
     const searchButton = document.getElementById("search");
     const selectType= document.getElementById("select-type")
-
+    const selectDisplay = document.getElementById("select-display")
     searchButton.addEventListener("click",()=>{
         const carsTypeArray =cars.filter(data=>{
             return data.type === selectType.value
         })
-        draw(carsTypeArray,DOM.cardsData,"cards")
+        switch(selectDisplay.value)
+        {
+         case "table":draw(carsTypeArray,DOM.tableData,selectDisplay.value); break;
+         case "cards":draw(carsTypeArray,DOM.cardsData,selectDisplay.value); break;
+         case "list":draw(carsTypeArray,DOM.listData,selectDisplay.value); break;
+        }
+        
     })
 
     listViewButton.addEventListener("click", function () {
@@ -149,7 +155,7 @@ function clearDOM() {
 function getListItem(carData) {
     const listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
-    listItem.innerText = `car lp: ${carData.lp}, car color: ${carData.color}`;
+    listItem.innerText = `car lp: ${carData.lp}\ncar color: ${carData.color},\ncar model: ${carData.type}\n car isSunRoof: ${carData.isSunRoof}`;
     return listItem;
 }
 

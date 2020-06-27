@@ -12,12 +12,13 @@
 
 <body>
 
-
     <div class="container">
         <h1 class="jumbotron"> Cars Management </h1>
         <div class="row">
+            
             <div class="col-lg-2">
-                    <label>Type</option>
+                    <label>Type</label>
+                    <label>Display</label>
             </div>
             <div class="col-lg-2">
                 <select class="form-control" id="select-type">
@@ -26,7 +27,14 @@
                     <option>Mazda</option>
                     <option>Subaro</option>
                 </select>
+
+                <select class="form-control" id="select-display">
+                    <option>table</option>
+                    <option>list</option>
+                    <option>cards</option> 
+                </select>
             </div>
+            
             <div class="col-lg-2">
                 <button id="search" class="btn btn-success m-1"> Search </button>
             </div>
