@@ -121,9 +121,16 @@ function generateSingleCar(index) {
         
         if(e.target.checked){
             showSunRoof.isVisible = true
-
+            DOM.whatToDraw = "table"
+        draw(cars, DOM.tableData, "table")
+        draw(headers, DOM.tableHead, "tableHeader", false)
         }
-        else {showSunRoof.isVisible = false}
+        else {
+            showSunRoof.isVisible = false
+            DOM.whatToDraw = "table"
+            draw(cars, DOM.tableData, "table")
+            draw(headers, DOM.tableHead, "tableHeader", false)
+        }
         }
     )
 
